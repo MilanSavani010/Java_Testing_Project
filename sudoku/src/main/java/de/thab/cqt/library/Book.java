@@ -34,4 +34,10 @@ public class Book {
     public void returnBook() {
         isCheckedOut = false;
     }
+
+    public String updateTitle(String newTitle)
+    {
+        this.title = newTitle;
+        return this.title;
+    }
 }
