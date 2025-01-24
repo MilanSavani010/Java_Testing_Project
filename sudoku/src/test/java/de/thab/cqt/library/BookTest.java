@@ -17,6 +17,24 @@ public class BookTest {
         book = new Book("t1","au1");
     }
 
+    @Test
+    public void testUpdateTitleMethod()
+    {
+         // Create a mock of the Book class
+        Book book = Mockito.mock(Book.class);
+
+        // Define behavior for the updateTitle method with a specific parameter
+        when(book.updateTitle("New Title")).thenReturn("New Title");
+
+        // Use the mock in the test
+        String updatedTitle = book.updateTitle("New Title");
+        assertEquals("New Title", updatedTitle);
+
+        // Verify the method was called with the specific parameter
+        verify(book).updateTitle("New Title");
+    }
+    
+
     // Test objectives: Verify that the book's properties (title and author) are correctly set
     @ParameterizedTest
     @CsvSource({
